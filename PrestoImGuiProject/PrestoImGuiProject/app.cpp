@@ -13,12 +13,20 @@ void App::Draw(float DeltaTime, float FPS)
 
     switch (mode)
     {
-    case Mode::Files:
-        filesView.Draw();
-        break;
-    case Mode::Plotter:
-        plotter.Draw();
-        break;
+        case Mode::Files:
+            filesView.Draw();
+            break;
+        case Mode::Plotter:
+            plotter.Draw();
+            break;
+            ImGui::SameLine();
+        case Mode::Bubbles:
+        {
+            ImVec2 size = ImGui::GetMainViewport()->Size;
+            bubbleViewer.Update(DeltaTime);   // simulation step
+            bubbleViewer.Draw(size);
+            break;
+        }
     }
 }
 
@@ -31,10 +39,16 @@ void App::DrawTopBar()
 
     if (ImGui::Button("Plotter"))
         SetMode(Mode::Plotter);
+    ImGui::SameLine();
+
+    if (ImGui::Button("Bubbles"))
+        SetMode(Mode::Bubbles);
+
 }
 
 void App::SetMode(Mode newMode)
 {
     mode = newMode;
-
+    if (mode == Mode::Bubbles)
+        bubbleViewer.Init(100);
 }

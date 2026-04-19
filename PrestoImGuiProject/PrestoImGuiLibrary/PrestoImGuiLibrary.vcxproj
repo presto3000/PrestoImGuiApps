@@ -131,10 +131,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Tools\BubbleViewer\PI_BubbleViewer.cpp" />
     <ClCompile Include="Tools\FileViewer\PI_FileBrowserView.cpp" />
     <ClCompile Include="Tools\PlotterViewer\PI_PlotterView.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Tools\BubbleViewer\PI_BubbleViewer.h" />
     <ClInclude Include="Tools\FileViewer\PI_FileBrowserView.h" />
     <ClInclude Include="Tools\PlotterViewer\PI_PlotterView.h" />
   </ItemGroup>
