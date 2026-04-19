@@ -16,6 +16,9 @@ void App::Draw(float DeltaTime, float FPS)
     case Mode::Files:
         filesView.Draw();
         break;
+    case Mode::Plotter:
+        plotter.Draw();
+        break;
     }
 }
 
@@ -23,6 +26,11 @@ void App::DrawTopBar()
 {
     if (ImGui::Button("File Viewer"))
         SetMode(Mode::Files);
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("Plotter"))
+        SetMode(Mode::Plotter);
 }
 
 void App::SetMode(Mode newMode)

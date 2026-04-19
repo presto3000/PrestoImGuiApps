@@ -132,9 +132,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Tools\FileViewer\PI_FileBrowserView.cpp" />
+    <ClCompile Include="Tools\PlotterViewer\PI_PlotterView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tools\FileViewer\PI_FileBrowserView.h" />
+    <ClInclude Include="Tools\PlotterViewer\PI_PlotterView.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
