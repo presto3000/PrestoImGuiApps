@@ -27,6 +27,10 @@ void App::Draw(float DeltaTime, float FPS)
             bubbleViewer.Draw(size);
             break;
         }
+        case Mode::TextEditor:
+            textEditor.Draw();
+            break;
+
     }
 }
 
@@ -39,10 +43,16 @@ void App::DrawTopBar()
 
     if (ImGui::Button("Plotter"))
         SetMode(Mode::Plotter);
+
     ImGui::SameLine();
 
     if (ImGui::Button("Bubbles"))
         SetMode(Mode::Bubbles);
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("Text Editor"))
+        SetMode(Mode::TextEditor);
 
 }
 

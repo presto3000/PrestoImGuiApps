@@ -134,11 +134,13 @@
     <ClCompile Include="Tools\BubbleViewer\PI_BubbleViewer.cpp" />
     <ClCompile Include="Tools\FileViewer\PI_FileBrowserView.cpp" />
     <ClCompile Include="Tools\PlotterViewer\PI_PlotterView.cpp" />
+    <ClCompile Include="Tools\TextEditorViewer\PI_TextEditorViewer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tools\BubbleViewer\PI_BubbleViewer.h" />
     <ClInclude Include="Tools\FileViewer\PI_FileBrowserView.h" />
     <ClInclude Include="Tools\PlotterViewer\PI_PlotterView.h" />
+    <ClInclude Include="Tools\TextEditorViewer\PI_TextEditorViewer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

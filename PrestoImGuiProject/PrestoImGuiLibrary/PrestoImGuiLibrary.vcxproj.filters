@@ -24,6 +24,9 @@
     <ClCompile Include="Tools\BubbleViewer\PI_BubbleViewer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tools\TextEditorViewer\PI_TextEditorViewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tools\FileViewer\PI_FileBrowserView.h">
@@ -33,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tools\BubbleViewer\PI_BubbleViewer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\TextEditorViewer\PI_TextEditorViewer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
