@@ -30,6 +30,9 @@ void App::Draw(float DeltaTime, float FPS)
         case Mode::TextEditor:
             textEditor.Draw();
             break;
+        case Mode::FileDiffViewer:
+            fileDiffViewer.Draw();
+			break;
 
     }
 }
@@ -53,6 +56,11 @@ void App::DrawTopBar()
 
     if (ImGui::Button("Text Editor"))
         SetMode(Mode::TextEditor);
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("File Diff Viewer"))
+		SetMode(Mode::FileDiffViewer);
 
 }
 
