@@ -5,12 +5,13 @@
 #include <Tools/BubbleViewer/PI_BubbleViewer.h>
 #include <Tools/TextEditorViewer/PI_TextEditorViewer.h>
 #include <Tools/FileDiffViewer/PI_FileDiffViewer.h>
+#include <Tools/PaintViewer/PI_PaintViewer.h>
 
 
 class App
 {
 public:
-    enum class Mode { Files, Plotter, Bubbles, TextEditor, FileDiffViewer };
+    enum class Mode { Files, Plotter, Bubbles, TextEditor, FileDiffViewer, Paint };
 
     Mode mode = Mode::Files;
 
@@ -19,6 +20,7 @@ public:
     PI_BubbleViewer bubbleViewer;
     PI_TextEditorViewer textEditor;
     PI_FileDiffViewer fileDiffViewer;
+    PI_PaintViewer PI_PaintViewer;
 
     void Draw(float DeltaTime, float FPS);
     void DrawTopBar();

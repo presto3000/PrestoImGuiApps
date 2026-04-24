@@ -33,6 +33,9 @@ void App::Draw(float DeltaTime, float FPS)
         case Mode::FileDiffViewer:
             fileDiffViewer.Draw();
 			break;
+		case Mode::Paint:
+			PI_PaintViewer.Draw();
+			break;
 
     }
 }
@@ -61,6 +64,11 @@ void App::DrawTopBar()
 
     if (ImGui::Button("File Diff Viewer"))
 		SetMode(Mode::FileDiffViewer);
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("Paint"))
+		SetMode(Mode::Paint);
 
 }
 

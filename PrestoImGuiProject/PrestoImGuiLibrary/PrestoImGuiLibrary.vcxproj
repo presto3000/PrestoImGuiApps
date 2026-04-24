@@ -134,6 +134,7 @@
     <ClCompile Include="Tools\BubbleViewer\PI_BubbleViewer.cpp" />
     <ClCompile Include="Tools\FileDiffViewer\PI_FileDiffViewer.cpp" />
     <ClCompile Include="Tools\FileViewer\PI_FileBrowserView.cpp" />
+    <ClCompile Include="Tools\PaintViewer\PI_PaintViewer.cpp" />
     <ClCompile Include="Tools\PlotterViewer\PI_PlotterView.cpp" />
     <ClCompile Include="Tools\TextEditorViewer\PI_TextEditorViewer.cpp" />
   </ItemGroup>
@@ -141,6 +142,7 @@
     <ClInclude Include="Tools\BubbleViewer\PI_BubbleViewer.h" />
     <ClInclude Include="Tools\FileDiffViewer\PI_FileDiffViewer.h" />
     <ClInclude Include="Tools\FileViewer\PI_FileBrowserView.h" />
+    <ClInclude Include="Tools\PaintViewer\PI_PaintViewer.h" />
     <ClInclude Include="Tools\PlotterViewer\PI_PlotterView.h" />
     <ClInclude Include="Tools\TextEditorViewer\PI_TextEditorViewer.h" />
   </ItemGroup>
