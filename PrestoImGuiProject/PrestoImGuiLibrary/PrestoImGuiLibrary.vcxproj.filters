@@ -33,6 +33,9 @@
     <ClCompile Include="Tools\PaintViewer\PI_PaintViewer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tools\Calendar\PI_Calendar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tools\FileViewer\PI_FileBrowserView.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tools\PaintViewer\PI_PaintViewer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Calendar\PI_Calendar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

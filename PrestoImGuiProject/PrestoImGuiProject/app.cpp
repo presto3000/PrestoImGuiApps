@@ -2,6 +2,16 @@
 #include <imgui.h>
 
 
+void App::OnStart()
+{
+	calendar.LoadMeetingsFromFile("meetings.bin");
+}
+
+void App::OnEnd()
+{
+    calendar.SaveMeetingsToFile("meetings.bin");
+}
+
 void App::Draw(float DeltaTime, float FPS)
 {
     ImGui::Begin("Debug");
@@ -34,8 +44,11 @@ void App::Draw(float DeltaTime, float FPS)
             fileDiffViewer.Draw();
 			break;
 		case Mode::Paint:
-			PI_PaintViewer.Draw();
+            paintViewer.Draw();
 			break;
+		case Mode::Calendar:
+            calendar.Draw("Presto Calendar");
+            break;
 
     }
 }
@@ -69,6 +82,11 @@ void App::DrawTopBar()
 
     if (ImGui::Button("Paint"))
 		SetMode(Mode::Paint);
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("Calendar"))
+		SetMode(Mode::Calendar);
 
 }
 

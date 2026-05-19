@@ -124,7 +124,10 @@ int main(int, char**)
 
     // DEPRECATED
     // window_obj;
+
+	// ------------------ APP CODE ------------------ //
     App app;
+    app.OnStart();
 
     float lastTime = (float)glfwGetTime();
     float fps = 0.0f;
@@ -160,6 +163,9 @@ int main(int, char**)
 
         end_cycle(window);
     }
+
+    app.OnEnd();
+	// ------------------ END OF APP CODE ------------------ //
 
     // Cleanup
     ImGui_ImplOpenGL3_Shutdown();

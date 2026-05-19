@@ -6,12 +6,13 @@
 #include <Tools/TextEditorViewer/PI_TextEditorViewer.h>
 #include <Tools/FileDiffViewer/PI_FileDiffViewer.h>
 #include <Tools/PaintViewer/PI_PaintViewer.h>
+#include <Tools/Calendar/PI_Calendar.h>
 
 
 class App
 {
 public:
-    enum class Mode { Files, Plotter, Bubbles, TextEditor, FileDiffViewer, Paint };
+    enum class Mode { Files, Plotter, Bubbles, TextEditor, FileDiffViewer, Paint, Calendar };
 
     Mode mode = Mode::Files;
 
@@ -20,7 +21,11 @@ public:
     PI_BubbleViewer bubbleViewer;
     PI_TextEditorViewer textEditor;
     PI_FileDiffViewer fileDiffViewer;
-    PI_PaintViewer PI_PaintViewer;
+    PI_PaintViewer paintViewer;
+	PI_Calendar calendar;
+
+    void OnStart();
+    void OnEnd();
 
     void Draw(float DeltaTime, float FPS);
     void DrawTopBar();
