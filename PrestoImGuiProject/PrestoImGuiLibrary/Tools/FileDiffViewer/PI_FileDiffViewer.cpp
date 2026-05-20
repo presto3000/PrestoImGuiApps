@@ -6,9 +6,13 @@
 #include "imgui_stdlib.h"
 
 
-void PI_FileDiffViewer::Draw()
+void PI_FileDiffViewer::Draw(bool& open)
 {
-    ImGui::Begin("File Diff Viewer");
+    if (!ImGui::Begin("File Diff Viewer", &open))
+    {
+        ImGui::End();
+        return;
+    }
 
     DrawSelection();
     DrawDiffView();

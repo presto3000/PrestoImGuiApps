@@ -17,7 +17,7 @@ PI_Calendar::PI_Calendar()
     selectedDate = std::chrono::year_month_day{ today };
 }
 
-void PI_Calendar::Draw(std::string_view label)
+void PI_Calendar::Draw(std::string_view label, bool& open)
 {
     constexpr auto window_flags =
         ImGuiWindowFlags_NoResize |
@@ -28,18 +28,21 @@ void PI_Calendar::Draw(std::string_view label)
     ImGui::SetNextWindowSize({ 1280.0f, 720.0f });
     ImGui::SetNextWindowPos({ 0.0f, 0.0f });
 
-    ImGui::Begin(label.data(), nullptr, window_flags);
+    if (open)
+    {
+        ImGui::Begin(label.data(), &open, window_flags);
 
-    DrawCalendar();
-    ImGui::Separator();
-    DrawDateCombo();
-    ImGui::Separator();
-    DrawMeetingList();
+        DrawCalendar();
+        ImGui::Separator();
+        DrawDateCombo();
+        ImGui::Separator();
+        DrawMeetingList();
 
-    if (addMeetingWindowOpen)
-        DrawAddMeetingWindow();
+        if (addMeetingWindowOpen)
+            DrawAddMeetingWindow();
 
-    ImGui::End();
+        ImGui::End();
+    }
 }
 
 void PI_Calendar::DrawCalendar()
@@ -95,7 +98,7 @@ void PI_Calendar::DrawCalendar()
 
             ImGui::PushStyleColor(ImGuiCol_Text, color);
 
-            if (ImGui::Button(label.c_str(), { 40, 40 }))
+            if (ImGui::Button(label.c_str(), { 30, 30 }))
             {
                 selectedDate = date;
             }

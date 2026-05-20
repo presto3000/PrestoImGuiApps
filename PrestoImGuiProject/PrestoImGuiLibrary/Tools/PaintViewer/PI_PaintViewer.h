@@ -50,7 +50,7 @@ public:
     };
 
     /// Renders the entire PI_PaintViewer window (menu + canvas)
-    void Draw();
+    void Draw(bool& open);
 
 private:
     // --- UI draw methods ---

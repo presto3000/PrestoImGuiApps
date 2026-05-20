@@ -8,7 +8,7 @@ namespace fs = std::filesystem;
 class PI_FileBrowserView
 {
 public:
-    void Draw();
+    void Draw(bool& open);
 
 private:
     void DrawMenu();

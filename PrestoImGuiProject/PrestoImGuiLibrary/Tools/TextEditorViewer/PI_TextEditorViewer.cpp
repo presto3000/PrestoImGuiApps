@@ -3,9 +3,13 @@
 #include <fstream>
 #include <iostream>
 
-void PI_TextEditorViewer::Draw()
+void PI_TextEditorViewer::Draw(bool& open)
 {
-    ImGui::Begin("Text Editor");
+    if (!ImGui::Begin("Text Editor", &open))
+    {
+        ImGui::End();
+        return;
+    }
 
     ImGui::Text("Simple Text Editor");
 

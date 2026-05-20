@@ -36,6 +36,9 @@
     <ClCompile Include="Tools\Calendar\PI_Calendar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tools\CSVEditor\PI_CSVEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tools\FileViewer\PI_FileBrowserView.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tools\Calendar\PI_Calendar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\CSVEditor\PI_CSVEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

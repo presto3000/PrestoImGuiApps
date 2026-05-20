@@ -12,7 +12,7 @@ public:
         // fills a block of memory with a specific byte value
         std::memset(textBuffer, 0, bufferSize);
     }
-    void Draw();
+    void Draw(bool& open);
 
     static constexpr auto bufferSize = std::size_t{ 1024 };
     static constexpr auto popUpFlags =

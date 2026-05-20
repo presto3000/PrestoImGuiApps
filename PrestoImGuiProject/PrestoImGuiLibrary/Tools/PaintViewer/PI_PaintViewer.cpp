@@ -12,7 +12,7 @@
 
 #include "PI_PaintViewer.h"
 
-void PI_PaintViewer::Draw()
+void PI_PaintViewer::Draw(bool& open)
 {
     constexpr static auto window_flags =
         ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
@@ -23,12 +23,15 @@ void PI_PaintViewer::Draw()
     ImGui::SetNextWindowSize(window_size);
     ImGui::SetNextWindowPos(window_pos);
 
-    ImGui::Begin("Paint Viewer", nullptr, window_flags);
+    if (open)
+    {
+        ImGui::Begin("Paint Viewer", &open, window_flags);
 
-    DrawMenu();
-    DrawCanvas();
+        DrawMenu();
+        DrawCanvas();
 
-    ImGui::End();
+        ImGui::End();
+    }
 }
 
 void PI_PaintViewer::DrawMenu()

@@ -4,9 +4,13 @@
 #include <imgui.h>
 #include <implot.h>
 
-void PI_PlotterView::Draw()
+void PI_PlotterView::Draw(bool& open)
 {
-    ImGui::Begin("PlotterView");
+    if (!ImGui::Begin("Plotter", &open))
+    {
+        ImGui::End();
+        return;
+    }
 
     DrawSelection();
     DrawPlot();

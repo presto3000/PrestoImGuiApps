@@ -62,9 +62,13 @@ void PI_BubbleViewer::Init(int count)
     }
 }
 
-void PI_BubbleViewer::Draw(ImVec2 canvas_size)
+void PI_BubbleViewer::Draw(ImVec2 canvas_size, bool& open)
 {
-    ImGui::Begin("Bubbles");
+    if (!ImGui::Begin("Bubbles", &open))
+    {
+        ImGui::End();
+        return;
+    }
 
     ImDrawList* draw = ImGui::GetWindowDrawList();
 

@@ -14,7 +14,7 @@ enum class EPlotType
 class PI_PlotterView
 {
 public:
-    void Draw();
+    void Draw(bool& open);
 
     constexpr static auto functionNames = std::array<std::string_view, 4>{
         "unknown",

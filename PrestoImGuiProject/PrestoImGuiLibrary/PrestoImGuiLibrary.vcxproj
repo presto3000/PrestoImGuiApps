@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClCompile Include="Tools\BubbleViewer\PI_BubbleViewer.cpp" />
     <ClCompile Include="Tools\Calendar\PI_Calendar.cpp" />
+    <ClCompile Include="Tools\CSVEditor\PI_CSVEditor.cpp" />
     <ClCompile Include="Tools\FileDiffViewer\PI_FileDiffViewer.cpp" />
     <ClCompile Include="Tools\FileViewer\PI_FileBrowserView.cpp" />
     <ClCompile Include="Tools\PaintViewer\PI_PaintViewer.cpp" />
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="Tools\BubbleViewer\PI_BubbleViewer.h" />
     <ClInclude Include="Tools\Calendar\PI_Calendar.h" />
+    <ClInclude Include="Tools\CSVEditor\PI_CSVEditor.h" />
     <ClInclude Include="Tools\FileDiffViewer\PI_FileDiffViewer.h" />
     <ClInclude Include="Tools\FileViewer\PI_FileBrowserView.h" />
     <ClInclude Include="Tools\PaintViewer\PI_PaintViewer.h" />

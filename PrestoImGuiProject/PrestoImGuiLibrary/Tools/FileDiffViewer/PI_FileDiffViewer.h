@@ -13,7 +13,7 @@ public:
 
     using FileContent = std::vector<std::string>;
 
-    void Draw();
+    void Draw(bool& open);
 
 private:
 

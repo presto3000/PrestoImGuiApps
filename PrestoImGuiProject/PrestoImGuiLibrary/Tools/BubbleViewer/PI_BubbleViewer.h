@@ -7,7 +7,7 @@ class PI_BubbleViewer
 public:
     void Init(int count = 50);
     void Update(float dt);          // phisics update, later
-    void Draw(ImVec2 canvas_size);
+    void Draw(ImVec2 canvas_size, bool& open);
 
 private:
     

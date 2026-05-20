@@ -28,7 +28,7 @@ public:
 public:
     PI_Calendar();
 
-    void Draw(std::string_view label);
+    void Draw(std::string_view label, bool& open);
 
     void LoadMeetingsFromFile(std::string_view filename);
     void SaveMeetingsToFile(std::string_view filename);
@@ -65,5 +65,6 @@ private:
         ImGuiWindowFlags_NoMove |
         ImGuiWindowFlags_NoCollapse |
         ImGuiWindowFlags_NoScrollbar;
+
 };
 

@@ -6,9 +6,13 @@
 
 #include "PI_FileBrowserView.h"
 
-void PI_FileBrowserView::Draw()
+void PI_FileBrowserView::Draw(bool& open)
 {
-    ImGui::Begin("File Browser");
+    if (!ImGui::Begin("File Browser", &open))
+    {
+        ImGui::End();
+        return;
+    }
 
     DrawMenu();
     ImGui::Separator();

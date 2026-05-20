@@ -21,72 +21,88 @@ void App::Draw(float DeltaTime, float FPS)
 
     DrawTopBar(); // mode switching
 
-    switch (mode)
+    if (state.showFiles)
     {
-        case Mode::Files:
-            filesView.Draw();
-            break;
-        case Mode::Plotter:
-            plotter.Draw();
-            break;
-            ImGui::SameLine();
-        case Mode::Bubbles:
-        {
-            ImVec2 size = ImGui::GetMainViewport()->Size;
-            bubbleViewer.Update(DeltaTime);   // simulation step
-            bubbleViewer.Draw(size);
-            break;
-        }
-        case Mode::TextEditor:
-            textEditor.Draw();
-            break;
-        case Mode::FileDiffViewer:
-            fileDiffViewer.Draw();
-			break;
-		case Mode::Paint:
-            paintViewer.Draw();
-			break;
-		case Mode::Calendar:
-            calendar.Draw("Presto Calendar");
-            break;
+        filesView.Draw(state.showFiles);
+    }
 
+    if (state.showPlotter)
+    {
+        plotter.Draw(state.showPlotter);
+    }
+
+    if (state.showBubbles)
+    {
+        ImVec2 size = ImGui::GetMainViewport()->Size;
+        bubbleViewer.Update(DeltaTime);
+        bubbleViewer.Draw(size, state.showBubbles);
+    }
+
+    if (state.showTextEditor)
+    {
+        textEditor.Draw(state.showTextEditor);
+    }
+
+    if (state.showFileDiff)
+    {
+        fileDiffViewer.Draw(state.showFileDiff);
+    }
+
+    if (state.showPaint)
+    {
+        paintViewer.Draw(state.showPaint);
+    }
+
+    if (state.showCalendar)
+    {
+        calendar.Draw("Presto Calendar", state.showCalendar);
+    }
+
+    if (state.showCSVEditor)
+    {
+        csvEditor.Draw("CSV Editor", state.showCSVEditor);
     }
 }
 
 void App::DrawTopBar()
 {
-    if (ImGui::Button("File Viewer"))
-        SetMode(Mode::Files);
+    if (ImGui::Button("Files"))
+        state.showFiles = true;
 
     ImGui::SameLine();
 
     if (ImGui::Button("Plotter"))
-        SetMode(Mode::Plotter);
+        state.showPlotter = true;
 
     ImGui::SameLine();
 
     if (ImGui::Button("Bubbles"))
-        SetMode(Mode::Bubbles);
+        if (!state.showBubbles)
+        {
+            state.showBubbles = true;
+            bubbleViewer.Init(100);
+        }
+
 
     ImGui::SameLine();
 
     if (ImGui::Button("Text Editor"))
-        SetMode(Mode::TextEditor);
-
-    ImGui::SameLine();
-
-    if (ImGui::Button("File Diff Viewer"))
-		SetMode(Mode::FileDiffViewer);
+        state.showTextEditor = true;
 
     ImGui::SameLine();
 
     if (ImGui::Button("Paint"))
-		SetMode(Mode::Paint);
+        state.showPaint = true;
 
     ImGui::SameLine();
 
     if (ImGui::Button("Calendar"))
-		SetMode(Mode::Calendar);
+        state.showCalendar = true;
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("CSV"))
+        state.showCSVEditor = true;
 
 }
 

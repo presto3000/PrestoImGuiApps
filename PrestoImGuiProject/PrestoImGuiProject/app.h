@@ -7,12 +7,25 @@
 #include <Tools/FileDiffViewer/PI_FileDiffViewer.h>
 #include <Tools/PaintViewer/PI_PaintViewer.h>
 #include <Tools/Calendar/PI_Calendar.h>
+#include <Tools/CSVEditor/PI_CSVEditor.h>
 
+struct AppState
+{
+    bool showFiles = false;
+    bool showPlotter = false;
+    bool showBubbles = false;
+    bool showTextEditor = false;
+    bool showFileDiff = false;
+    bool showPaint = false;
+    bool showCalendar = false;
+    bool showCSVEditor = false;
+};
 
 class App
 {
 public:
-    enum class Mode { Files, Plotter, Bubbles, TextEditor, FileDiffViewer, Paint, Calendar };
+    enum class Mode { Files, Plotter, Bubbles, TextEditor,
+        FileDiffViewer, Paint, Calendar , CSVEditor };
 
     Mode mode = Mode::Files;
 
@@ -23,6 +36,7 @@ public:
     PI_FileDiffViewer fileDiffViewer;
     PI_PaintViewer paintViewer;
 	PI_Calendar calendar;
+	PI_CSVEditor csvEditor;
 
     void OnStart();
     void OnEnd();
@@ -30,4 +44,7 @@ public:
     void Draw(float DeltaTime, float FPS);
     void DrawTopBar();
     void SetMode(Mode newMode);
+
+private:
+    AppState state;
 };
