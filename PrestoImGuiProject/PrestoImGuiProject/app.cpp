@@ -62,6 +62,11 @@ void App::Draw(float DeltaTime, float FPS)
     {
         csvEditor.Draw("CSV Editor", state.showCSVEditor);
     }
+
+    if (state.showClockViewer)
+    {
+        clockViewer.Draw("Clock Viewer", state.showClockViewer);
+    }
 }
 
 void App::DrawTopBar()
@@ -103,7 +108,11 @@ void App::DrawTopBar()
 
     if (ImGui::Button("CSV"))
         state.showCSVEditor = true;
+    
+    ImGui::SameLine();
 
+    if (ImGui::Button("Clock Viewer"))
+        state.showClockViewer = true;
 }
 
 void App::SetMode(Mode newMode)

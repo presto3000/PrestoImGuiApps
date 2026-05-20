@@ -8,6 +8,7 @@
 #include <Tools/PaintViewer/PI_PaintViewer.h>
 #include <Tools/Calendar/PI_Calendar.h>
 #include <Tools/CSVEditor/PI_CSVEditor.h>
+#include <Tools/ClockViewer/PI_ClockViewer.h>
 
 struct AppState
 {
@@ -19,6 +20,7 @@ struct AppState
     bool showPaint = false;
     bool showCalendar = false;
     bool showCSVEditor = false;
+    bool showClockViewer = false;
 };
 
 class App
@@ -37,6 +39,7 @@ public:
     PI_PaintViewer paintViewer;
 	PI_Calendar calendar;
 	PI_CSVEditor csvEditor;
+    PI_ClockViewer clockViewer;
 
     void OnStart();
     void OnEnd();
